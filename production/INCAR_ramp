@@ -1,0 +1,37 @@
+System = LMO
+ISTART = 0 #continue = 1, from scratch = 0
+ICHARG = 2 #continue = 1, superpostion of atomic charge densities = 2 
+ENCUT = 500
+ISMEAR = 0
+SIGMA = 0.05
+NEDOS = 901
+NCORE = 4
+
+# MD parameters
+ISYM = 0
+ISIF = 3
+MDALGO=3               # Langevin thermostat
+LANGEVIN_GAMMA = 1.0 1.0 1.0  # Langevin gamma for atoms
+LANGEVIN_GAMMA_L=3.0   # Langevin gamma for lattice dof
+PMASS=300              # fictional mass of lattice dof for Langevin thermostat
+LATTICE_CONSTRAINTS = T T T   # no constratints on lattice dof
+PSTRESS=0.001          # ambient pressure
+POTIM =  2.0 # timestep in fs
+IBRION = 0
+SMASS = 0
+TEBEG = 100.0 # start temp
+TEEND = 1100 # end temp
+NSW  =  250000 # heating rate is 2 K/ps
+NBLOCK = 10
+NWRITE = 1
+NELM = 100
+INIWAV = 1
+IWAVPR = 1
+LWAVE = .FALSE.
+LCHARG = .FALSE.
+
+# Machine learning
+ML_LMLFF = .TRUE.
+ML_MODE = run
+ML_OUTBLOCK = 10
+ML_OUTPUT_MODE =0
